@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Sekinah Saliu</title>
+  <meta name="description" content="Web development projects by Sekinah Saliu, including a Right Angle Triangle Validator, a Palindrome Number Checker, and a personal portfolio website." />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Supplemental styles for the redesigned project cards.
+       Safe to merge into style.css — scoped so it won't conflict
+       with the rest of the site's card system. */
+    .project-card__media {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3 / 2;
+      background: var(--surface-2, #eee);
+    }
+    .project-card__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .project-card:hover .project-card__media img {
+      transform: scale(1.04);
+    }
+    .project-card__body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .project-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 4px 0 2px;
+    }
+    .project-card__tags span {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.02em;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid currentColor;
+      opacity: 0.75;
+    }
+    .project-card__links {
+      display: flex;
+      gap: 16px;
+      margin-top: 6px;
+      font-weight: 600;
+    }
+    .project-card__links a {
+      text-decoration: none;
+    }
+    .project-card__links a[aria-disabled="true"] {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loader" data-loader>
+    <div class="loader__mark">
+      <span>OPENING REPOSITORY…</span>
+      <div class="loader__bar"></div>
+    </div>
+  </div>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress-bar" data-progress-bar></div>
+
+  <aside class="spine" aria-hidden="true">
+    <span class="spine__label">COS 106 — FIELD NOTES</span>
+    <div class="spine__ticks">
+      <span class="spine__tick"></span><span class="spine__tick"></span><span class="spine__tick"></span>
+      <span class="spine__tick"></span><span class="spine__tick"></span><span class="spine__tick"></span>
+    </div>
+    <span class="spine__label">03 / PROJECTS</span>
+  </aside>
+
+  <header class="site-header" data-site-header>
+    <nav class="nav" data-nav aria-label="Primary">
+      <a class="nav__brand" href="index.html">
+        <span class="nav__brand-mark" aria-hidden="true">S</span>
+        Sekinah Saliu
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="theme-toggle" data-theme-toggle type="button" aria-pressed="false" aria-label="Switch to dark mode">☾</button>
+        <button class="nav__toggle" data-nav-toggle type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <header class="page-header wrap">
+      <p class="eyebrow reveal">Selected work</p>
+      <h1 class="reveal">Three builds, three concepts</h1>
+      <p class="reveal">Each project below was built to practise a different slice of the
+        front-end stack — logic and algorithms, DOM interaction, and putting it all together
+        into a live site.</p>
+    </header>
+
+    <section>
+      <div class="wrap">
+        <div class="grid-3 reveal-stagger">
+
+          <article class="card project-card reveal" style="--i:0">
+            <div class="project-card__media">
+              <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?fm=jpg&q=80&w=900&auto=format&fit=crop"
+                   alt="Laptop screen showing JavaScript code in a code editor, representing the logic behind the Right Angle Triangle Validator"
+                   width="600" height="400" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3>Right Angle Triangle Validator</h3>
+              <p>A web app that checks whether three user-entered side lengths form a
+                right-angled triangle, applying the Pythagorean theorem to validate input
+                and return an instant result.</p>
+              <div class="project-card__tags">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" aria-disabled="true">Live demo →</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">Source code →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project-card reveal" style="--i:1">
+            <div class="project-card__media">
+              <img src="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?fm=jpg&q=80&w=900&auto=format&fit=crop"
+                   alt="Laptop screen showing JavaScript code for a web application, representing the logic behind the Palindrome Number Checker"
+                   width="600" height="400" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3>Palindrome Number Checker</h3>
+              <p>A small utility that takes a number, reverses it, and compares the reversed
+                value against the original to determine — and clearly display — whether it's
+                a palindrome.</p>
+              <div class="project-card__tags">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" aria-disabled="true">Live demo →</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">Source code →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project-card reveal" style="--i:2">
+            <div class="project-card__media">
+              <img src="https://images.unsplash.com/photo-1504608245011-62d9758c1bb9?fm=jpg&q=80&w=900&auto=format&fit=crop"
+                   alt="Laptop open on a desk displaying a modern minimalist website layout, representing the Personal Portfolio Website project"
+                   width="600" height="400" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3>Personal Portfolio Website</h3>
+              <p>This site itself — a responsive portfolio built to showcase my skills,
+                projects, education, and contact information, with a consistent layout system
+                across every page.</p>
+              <div class="project-card__tags">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+              </div>
+              <div class="project-card__links">
+                <a href="index.html">Live demo →</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">Source code →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section--muted">
+      <div class="wrap text-center reveal">
+        <p class="eyebrow">More on GitHub</p>
+        <h2>Want to see the code behind these builds?</h2>
+        <p style="max-width:56ch;margin:0 auto 26px;">Every project on this page links back to its
+          repository. This whole portfolio is open-source too — feel free to fork it.</p>
+        <a class="btn btn--primary" href="https://github.com/" target="_blank" rel="noopener noreferrer">Visit my GitHub</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h4>Sekinah Saliu</h4>
+          <p>Cybersecurity student at MIVA Open University, building this site as a
+            living academic portfolio for COS 106 — Introduction to Web Technologies.</p>
+          <div class="social-row">
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GH</a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">Ln</a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter profile">Tw</a>
+          </div>
+        </div>
+        <div>
+          <h4>Site map</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="planner.html">Academic Planner</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in touch</h4>
+          <ul>
+            <li>sekinah.saliu@example.edu</li>
+            <li>+234 800 000 0000</li>
+            <li>Enugu, Nigeria</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Sekinah Saliu. Built for COS 106.</span>
+        <span>Designed &amp; coded with HTML, CSS &amp; vanilla JavaScript.</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" data-back-to-top type="button" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
