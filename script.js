@@ -157,21 +157,17 @@
   const el = document.querySelector("[data-typing]");
   if (!el) return;
 
-  const messages = [
-    "Hi, I'm Sekinah.",
-    "Welcome to my portfolio."
-  ];
-
+  const words = el.dataset.typing.split("|");
   let index = 0;
 
-  el.textContent = messages[index];
+  function changeWord() {
+    el.textContent = words[index];
+    index = (index + 1) % words.length;
+  }
 
-  setInterval(() => {
-    index = (index + 1) % messages.length;
-    el.textContent = messages[index];
-  }, 2000);
+  changeWord();
+  setInterval(changeWord, 800); // Change word every 0.8 seconds
 }
-
   /* -----------------------------------------------------------------------
      Module: Animated skill bars (About page)
      Bars fill to their data-level percentage once scrolled into view.
