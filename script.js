@@ -154,46 +154,23 @@
      Module: Typing animation for the hero headline
      ----------------------------------------------------------------------- */
   function initTypingEffect() {
-    const el = document.querySelector("[data-typing]");
-    if (!el) return;
+  const el = document.querySelector("[data-typing]");
+  if (!el) return;
 
-    const phrases = JSON.parse(el.getAttribute("data-typing") || "[]");
-    if (!phrases.length) return;
+  const messages = [
+    "Hi, I'm Sekinah.",
+    "Welcome to my portfolio."
+  ];
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) {
-      el.textContent = phrases[0];
-      return;
-    }
+  let index = 0;
 
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
+  el.textContent = messages[index];
 
-    function tick() {
-      const current = phrases[phraseIndex];
-
-      if (!deleting) {
-        charIndex++;
-        el.textContent = current.slice(0, charIndex);
-        if (charIndex === current.length) {
-          deleting = true;
-          setTimeout(tick, 1500);
-          return;
-        }
-      } else {
-        charIndex--;
-        el.textContent = current.slice(0, charIndex);
-        if (charIndex === 0) {
-          deleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-        }
-      }
-      setTimeout(tick, deleting ? 45 : 85);
-    }
-
-    tick();
-  }
+  setInterval(() => {
+    index = (index + 1) % messages.length;
+    el.textContent = messages[index];
+  }, 2000);
+}
 
   /* -----------------------------------------------------------------------
      Module: Animated skill bars (About page)
