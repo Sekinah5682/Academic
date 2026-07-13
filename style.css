@@ -520,8 +520,8 @@ section { padding: 88px 0; }
   overflow: hidden;
   display: inline-block;
   animation: fadeSlideDown 0.9s var(--transition-med) 0.15s both;
+  transition: opacity 0.6s ease;
 }
-
 .hero__type::after {
   content: "";
   display: inline-block;
