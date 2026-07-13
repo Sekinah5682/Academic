@@ -154,19 +154,40 @@
      Module: Typing animation for the hero headline
      ----------------------------------------------------------------------- */
   function initTypingEffect() {
-  const el = document.querySelector("[data-typing]");
-  if (!el) return;
+    const el = document.querySelector("[data-typing]");
+    if (!el) return;
 
-  const words = el.dataset.typing.split("|");
-  let index = 0;
+    const phrases = el.dataset.typing.split("|");
+    let phraseIndex = 0;
 
-  function changeWord() {
-    el.textContent = words[index];
-    index = (index + 1) % words.length;
-  }
+    function typePhrase() {
+        const words = phrases[phraseIndex].trim().split(" ");
+        let currentWord = 0;
 
-  changeWord();
-  setInterval(changeWord, 800); // Change word every 0.8 seconds
+        el.textContent = "";
+        el.style.opacity = "1";
+
+        function typeWord() {
+            if (currentWord < words.length) {
+                el.textContent += (currentWord ? " " : "") + words[currentWord];
+                currentWord++;
+                setTimeout(typeWord, 350);
+            } else {
+                setTimeout(() => {
+                    el.style.opacity = "0";
+
+                    setTimeout(() => {
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                        typePhrase();
+                    }, 600);
+                }, 1800);
+            }
+        }
+
+        typeWord();
+    }
+
+    typePhrase();
 }
   /* -----------------------------------------------------------------------
      Module: Animated skill bars (About page)
