@@ -1082,3 +1082,10 @@ tbody tr:hover {
 .page-header + section {
     padding-top: 20px !important;
 }
+tbody tr:hover {
+  background: var(--color-line);
+}
+
+.page-header + section {
+  padding-top: 45px;
+}
