@@ -1074,3 +1074,11 @@ form .field { margin-bottom: 18px; }
 .mt-lg { margin-top: 48px; }
 .text-center { text-align: center; }
 .divider { height: 1px; background: var(--color-line); border: none; margin: 60px 0; }
+tbody tr:hover {
+    background: var(--color-line);
+}
+
+/* About page spacing fix */
+.page-header + section {
+    padding-top: 20px !important;
+}
