@@ -610,6 +610,7 @@ section { padding: 88px 0; }
 /* Portrait */
 
 .hero__portrait {
+  position: relative;
   max-width: 420px;
   width: 100%;
   margin: 0 auto;
@@ -617,7 +618,14 @@ section { padding: 88px 0; }
   overflow: hidden;
   border: 1px solid var(--color-line);
   background: var(--color-paper-raised);
-  box-shadow: 0 25px 60px rgba(15,23,42,.18);
+
+  /* Soft Glow */
+  box-shadow:
+    0 0 20px rgba(34, 211, 238, 0.18),
+    0 25px 60px rgba(15, 23, 42, 0.18);
+
+  /* Gentle Floating */
+  animation: float 5s ease-in-out infinite;
 }
 
 .hero__portrait img {
@@ -625,9 +633,13 @@ section { padding: 88px 0; }
   width: 100%;
   height: auto;
   object-fit: cover;
-  transition: transform .4s ease;
+  transition: transform 0.4s ease;
 }
 
+/* Zoom on Hover */
+.hero__portrait:hover img {
+  transform: scale(1.04);
+}
 .hero__portrait:hover img {
   transform: scale(1.04);
 }
@@ -1091,6 +1103,7 @@ tbody tr:hover {
 }
 
  /* Floating Animation */
+
 @keyframes float {
   0% {
     transform: translateY(0);
@@ -1102,29 +1115,5 @@ tbody tr:hover {
 
   100% {
     transform: translateY(0);
-  }
-}
-
-/* Fade In */
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Shine Effect */
-@keyframes shine {
-  0% {
-    left: -80%;
-  }
-
-  100% {
-    left: 150%;
   }
 }
