@@ -1089,3 +1089,42 @@ tbody tr:hover {
 .page-header + section {
   padding-top: 25px;
 }
+
+     /* Floating Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Fade In */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Shine Effect */
+@keyframes shine {
+  0% {
+    left: -80%;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
