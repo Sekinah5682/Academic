@@ -621,8 +621,10 @@ section { padding: 88px 0; }
 
   /* Soft Glow */
   box-shadow:
-    0 0 20px rgba(34, 211, 238, 0.18),
-    0 25px 60px rgba(15, 23, 42, 0.18);
+  0 0 35px rgba(34, 211, 238, 0.35),
+  0 0 70px rgba(34, 211, 238, 0.15),
+  0 25px 60px rgba(15, 23, 42, 0.18);
+
 
   /* Gentle Floating */
   animation: float 5s ease-in-out infinite;
